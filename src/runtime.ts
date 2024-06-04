@@ -38,7 +38,7 @@ function bind(this: Function, thisArg: unknown, ...args: unknown[]) {
   });
 }
 
-function decodePlugin({
+export function decodePlugin({
   callServer,
   loadClientReference,
 }: DecodeOptions = {}): turbo.DecodePlugin {
@@ -194,7 +194,7 @@ export type EncodeOptions = {
   onError?: (error: unknown) => void;
 };
 
-function encodePlugin({
+export function encodePlugin({
   clientReferenceMetadata,
   onError,
 }: EncodeOptions = {}): turbo.EncodePlugin {
