@@ -1,0 +1,72 @@
+{
+  "name": "turbo-stream-react",
+  "type": "module",
+  "version": "0.0.2",
+  "description": "",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/runtime.d.cts",
+        "default": "./dist/runtime.cjs"
+      },
+      "default": {
+        "types": "./dist/runtime.d.ts",
+        "default": "./dist/runtime.js"
+      }
+    },
+    "./client": {
+      "require": {
+        "types": "./dist/client.d.cts",
+        "default": "./dist/client.cjs"
+      },
+      "default": {
+        "types": "./dist/client.d.ts",
+        "default": "./dist/client.js"
+      }
+    },
+    "./server": {
+      "node": {
+        "require": {
+          "types": "./dist/server.node.d.cts",
+          "default": "./dist/server.node.cjs"
+        },
+        "default": {
+          "types": "./dist/server.node.d.ts",
+          "default": "./dist/server.node.js"
+        }
+      },
+      "require": {
+        "types": "./dist/server.d.cts",
+        "default": "./dist/server.cjs"
+      },
+      "default": {
+        "types": "./dist/server.d.ts",
+        "default": "./dist/server.js"
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsup --clean && tsc",
+    "test": "node --no-warnings --loader ts-node/esm --test src/*.test.*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "20.14.1",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "react": "19.0.0-rc-bf3a29d097-20240603",
+    "react-dom": "19.0.0-rc-bf3a29d097-20240603",
+    "ts-node": "10.9.2",
+    "tsup": "8.1.0",
+    "typescript": "5.4.5"
+  },
+  "dependencies": {
+    "turbo-stream": "^2.2.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  }
+}
